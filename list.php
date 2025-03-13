@@ -24,7 +24,8 @@ if(file_exists($filename))
 
 if (!empty($data)) {
     $data = explode("\n", trim($data));
-} else {
+} else 
+{
     $data = [];
 }
 
@@ -36,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name']) && !empty(trim
         header ("Location: " . $_SERVER["PHP_SELF"]);
         exit;
     }
+
+
 ?>
 <form method="POST">
     <label for="name">What to do:</label>
@@ -45,6 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name']) && !empty(trim
 <h3>You need to</h3>
 
 <ul>
+
+
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['remove'])) {
@@ -56,6 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['remove'])) {
     }}
     foreach ($data as $index => $do ):
     ?>
+
+
+
 
     <li>
         <?=htmlspecialchars($do)?>
