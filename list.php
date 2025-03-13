@@ -58,7 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['remove'])) {
         unset($data[$indexToRemove]);
         $data = array_values($data);
         file_put_contents($filename, implode("\n", $data));
-    }}
+    }
+    header ("Location: " . $_SERVER["PHP_SELF"]);}
     foreach ($data as $index => $do ):
     ?>
 
